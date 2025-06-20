@@ -20,4 +20,19 @@ public class Author {
         return name + " " + surname;
     }
 
+    @Override public boolean equals(Object obj){
+        if(this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Author other = (Author) obj;
+        return this.name.equals(other.name) &&
+                this.surname.equals(other.surname);
+        }
+
+    @Override public int hashCode() {
+       return java.util.Objects.hash(name, surname);
+    }
+
 }
+
+
