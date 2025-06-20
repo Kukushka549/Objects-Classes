@@ -38,6 +38,22 @@ public class Book {
         return bookName + " " + author + " " + yearPublish;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Book other = (Book) obj;
+        return this.bookName.equals(other.bookName) &&
+                this.author.equals(other.author)&&
+                 this.yearPublish == other.yearPublish;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(bookName, author, yearPublish);
+    }
+
 }
 
 
